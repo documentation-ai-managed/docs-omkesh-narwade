@@ -1,0 +1,137 @@
+---
+title: Core Features and Sections
+description: Explore the essential sections of the portfolio template, from skills and education highlights to project showcases, to effectively present your professional profile.
+---
+
+## Overview
+
+Your Omkesh Narwade portfolio website features core sections that highlight your expertise as an Electronics and Computer Engineering student at MIT Aurangabad. These include skills, education, projects, and personal branding elements. Customize them to showcase programming languages like JavaScript and Python, web technologies such as React and Next.js, cloud computing with AWS, and design tools like Figma.
+
+Use the intuitive template to present your academic history, certifications, and standout projects. This guide walks you through each section with practical examples.
+
+<Columns cols={3}>
+  <Card title="Skills" icon="code" href="#skills-section">
+    List your technical proficiencies with progress bars or icons.
+  </Card>
+  <Card title="Education" icon="book-open" href="#education-section">
+    Detail your degrees, institutions, and certifications.
+  </Card>
+  <Card title="Projects" icon="folder" href="#projects-section">
+    Showcase interactive galleries of your work.
+  </Card>
+</Columns>
+
+## Skills Section
+
+Display your skills prominently to grab recruiters' attention. The template supports progress indicators, icons, and categorization.
+
+<Callout kind="tip">
+  Prioritize top skills like `JavaScript`, `React`, and `AWS` at the top for maximum impact.
+</Callout>
+
+Customize the skills array in your config file:
+
+<CodeGroup tabs="JavaScript,TypeScript">
+  ```javascript
+  const skills = [
+    { name: 'JavaScript', level: 90, category: 'Frontend' },
+    { name: 'Python', level: 85, category: 'Backend' },
+    { name: 'React', level: 95, category: 'Frameworks' },
+    { name: 'AWS', level: 80, category: 'Cloud' }
+  ];
+  ```
+  ```typescript
+  interface Skill {
+    name: string;
+    level: number;
+    category: string;
+  }
+
+  const skills: Skill[] = [
+    { name: 'JavaScript', level: 90, category: 'Frontend' },
+    { name: 'Python', level: 85, category: 'Backend' },
+    { name: 'React', level: 95, category: 'Frameworks' },
+    { name: 'AWS', level: 80, category: 'Cloud' }
+  ];
+  ```
+</CodeGroup>
+
+## Education Background
+
+Highlight your MIT Aurangabad degree and certifications. Include timelines, GPAs, and achievements.
+
+<Steps>
+  <Step title="Add Your Degree" icon="graduation-cap">
+    Edit the `education` section in `data/profile.ts`:
+
+````typescript
+const education = [
+  {
+    institution: 'MIT Aurangabad',
+    degree: 'B.Tech Electronics and Computer Engineering',
+    years: '2021 - 2025',
+    gpa: '9.2/10'
+  }
+];
+````
+
+  </Step>
+  <Step title="Include Certifications" icon="award">
+    Append certs like AWS Certified Developer:
+
+````javascript
+certifications: [
+  'AWS Certified Developer - Associate',
+  'Google Cloud Associate Cloud Engineer'
+]
+````
+
+  </Step>
+</Steps>
+
+## Projects Gallery
+
+Feature your projects with images, descriptions, tech stacks, and live demos. The responsive grid adapts to any screen.
+
+<Tabs>
+  <Tab title="Add Project" icon="plus">
+    Use the `projects` array:
+
+````javascript
+const projects = [
+  {
+    title: 'Portfolio Website',
+    description: 'Personal site built with Next.js and Tailwind CSS.',
+    tech: ['Next.js', 'Tailwind', 'TypeScript'],
+    demo: 'https://omkeshnarwade.com',
+    source: 'https://github.com/omkeshnarwade/portfolio'
+  }
+];
+````
+  </Tab>
+  <Tab title="Gallery Customization" icon="settings">
+    Adjust grid columns via props: `cols={3}` for desktop.
+  </Tab>
+</Tabs>
+
+## Contact and About Me
+
+Build personal branding with an `About Me` bio and contact form. Link to LinkedIn, GitHub, and email.
+
+<Expandable title="Advanced Contact Form Setup" default-open="false">
+  Integrate with EmailJS or Formspree:
+
+````html
+<form action="https://formspree.io/f/YOUR_FORM_ID">
+  <input type="email" name="email" placeholder="your@email.com" required />
+  <textarea name="message" placeholder="Your message"></textarea>
+  <button type="submit">Send Message</button>
+</form>
+````
+</Expandable>
+
+<Callout kind="success">
+  Test all links and forms locally before deploying to ensure seamless user experience.
+</Callout>
+
+These sections make your portfolio stand out. Next, explore customization in the [configuration guide](/configuration).

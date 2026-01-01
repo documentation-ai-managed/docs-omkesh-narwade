@@ -1,0 +1,141 @@
+---
+title: Quickstart: Setting Up Your Portfolio
+description: Get your Omkesh Narwade-inspired portfolio site up and running in minutes with step-by-step installation and initial configuration instructions.
+---
+
+## Overview
+
+Set up your personal portfolio website inspired by Omkesh Narwade's showcase in under 5 minutes. This starter kit uses modern web technologies like Next.js, Tailwind CSS, and MDX for easy content management. You'll clone the repository, install dependencies, launch the development server, and make your first edit to personalize the site.
+
+The portfolio highlights skills in programming languages such as JavaScript and Python, web technologies like React and Node.js, cloud computing with AWS and Docker, and design tools including Figma. Follow these steps to get a live preview at `http://localhost:3000`.
+
+<Callout kind="info">
+
+**Prerequisites**
+
+Before starting, ensure you have:
+
+- Node.js `{>=18.0.0}` (download from [nodejs.org](https://nodejs.org))
+- Git `{>=2.30.0}` (install from [git-scm.com](https://git-scm.com))
+- A code editor like VS Code
+
+Verify installations by running `node --version`, `git --version` in your terminal.
+
+</Callout>
+
+## Installation Steps
+
+Follow these sequential steps to get your development environment ready.
+
+<Steps>
+  <Step title="Clone the Repository" icon="git-branch">
+
+    Open your terminal and clone the official starter kit.
+
+````bash
+git clone https://github.com/omkeshnarwade/portfolio-starter.git omkesh-portfolio
+cd omkesh-portfolio
+````
+
+    This creates a local copy of the repository with all source code, including sections for education, projects, certifications, and skills.
+
+  </Step>
+
+  <Step title="Install Dependencies" icon="package">
+
+    Install the required packages using your preferred package manager.
+
+    <CodeGroup tabs="npm,yarn,pnpm">
+
+````bash
+npm install
+````
+
+````bash
+yarn install
+````
+
+````bash
+pnpm install
+````
+
+    </CodeGroup>
+
+    This fetches dependencies like Next.js, Tailwind CSS, and MDX components. The process takes 1-2 minutes depending on your internet speed.
+
+  </Step>
+
+  <Step title="Run the Development Server" icon="play-circle">
+
+    Start the local server with hot reloading enabled.
+
+    <Tabs>
+      <Tab title="npm" icon="npm">
+````bash
+npm run dev
+````
+      </Tab>
+      <Tab title="yarn" icon="yarn">
+````bash
+yarn dev
+````
+      </Tab>
+    </Tabs>
+
+    Open `http://localhost:3000` in your browser. You now see the Omkesh Narwade portfolio homepage with sections for skills, projects, and education.
+
+  </Step>
+
+  <Step title="Make Your First Edit" icon="edit-3">
+
+    Personalize the site immediately.
+
+    Edit `content/about.mdx` (or similar file in the content directory):
+
+````mdx
+---
+title: Your Name Here
+description: Electronics and Computer Engineering student passionate about web development and cloud computing.
+---
+
+## Introduction
+
+Replace this content with your background, skills, and achievements.
+````
+
+    Save the file. The site auto-reloads with your changes. Add your programming skills like JavaScript, React, or Python, and update the projects section next.
+
+  </Step>
+</Steps>
+
+## Next Steps
+
+Your portfolio is live locally! Build on this foundation with these resources.
+
+<Columns cols={3}>
+  <Card title="Customize Content" icon="edit" href="/customization">
+    Edit MDX files for projects, certifications, and skills sections.
+  </Card>
+
+  <Card title="Add Projects" icon="folder" href="/projects">
+    Showcase your work with images, descriptions, and live demos.
+  </Card>
+
+  <Card title="Deploy Live" icon="upload-cloud" href="/deployment">
+    Host on Vercel, Netlify, or GitHub Pages in one command.
+  </Card>
+</Columns>
+
+<Expandable title="Troubleshooting Common Issues" default-open="false">
+
+- **Port already in use?** Run `npm run dev -- -p 3001` to use port 3001.
+- **Dependency errors?** Delete `node_modules` and `package-lock.json`, then reinstall.
+- **Styles not loading?** Ensure Tailwind CSS is active in `tailwind.config.js`.
+
+</Expandable>
+
+<Callout kind="tip">
+
+Congratulations! You've set up your Omkesh Narwade-inspired portfolio. Next, explore the `src/components` directory to tweak the design using the brand color `#3B82F6` or add new features like a contact form.
+
+</Callout>

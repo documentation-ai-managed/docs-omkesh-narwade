@@ -1,0 +1,147 @@
+---
+title: Changelog
+description: Track the updates and improvements to the Omkesh Narwade portfolio starter kit, including recent enhancements and bug fixes.
+---
+
+## Recent Updates
+
+Stay informed about the latest changes to the Omkesh Narwade portfolio starter kit. You receive new features, performance improvements, and bug fixes with each release. Review the details below to understand what's new and how it impacts your site.
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Enhanced project gallery with interactive filters for categories like `web-development`, `cloud-computing`, and `electronics`
+- Added light/dark mode toggle with persistence using localStorage
+
+## Improvements
+
+- Optimized image loading for projects with lazy loading and WebP support
+- Improved accessibility scores with ARIA labels on interactive elements
+
+## Bug Fixes
+
+- Fixed mobile navigation overlap on project detail pages
+- Resolved TypeScript errors in certification component
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Added responsive design improvements for tablets and large mobiles
+- Integrated smooth scrolling and CSS animations for section transitions
+
+## Bug Fixes
+
+- Corrected footer link wrapping issues on small screens
+- Fixed hero section text overflow in landscape mode
+
+## Improvements
+
+- Updated Tailwind CSS to latest version for better utility classes
+- Enhanced SEO with dynamic meta tags for projects
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["feature"]}>
+
+## Initial Release
+
+- Core sections: Hero, About, Skills, Education, Projects, Certifications, Contact
+- Responsive design using Tailwind CSS and modern React components
+- Built with Next.js 14 for fast performance and static generation
+- Integrated Framer Motion for subtle animations
+
+</Update>
+
+## Upgrade Guide
+
+Follow these steps to update your portfolio site to the latest version. You back up your customizations first to avoid losing changes.
+
+<Steps>
+  <Step title="Backup Your Site" icon="save">
+
+  Create a backup of your current repository.
+
+  ```bash
+  git add .
+  git commit -m "Backup before upgrade"
+  git push origin main
+  ```
+
+  </Step>
+  <Step title="Update Dependencies" icon="package">
+
+  <Tabs>
+    <Tab title="npm" icon="npm">
+    ```bash
+    npm install @omkeshnarwade/portfolio-starter@latest
+    ```
+    </Tab>
+    <Tab title="yarn" icon="yarn">
+    ```bash
+    yarn add @omkeshnarwade/portfolio-starter@latest
+    ```
+    </Tab>
+    <Tab title="pnpm" icon="package">
+    ```bash
+    pnpm add @omkeshnarwade/portfolio-starter@latest
+    ```
+    </Tab>
+  </Tabs>
+
+  </Step>
+  <Step title="Run Migrations" icon="settings">
+
+  Check for any database or config migrations.
+
+  ```bash
+  npm run migrate
+  ```
+
+  Review `CHANGELOG.md` for breaking changes.
+
+  </Step>
+  <Step title="Deploy" icon="rocket">
+
+  Build and deploy your updated site.
+
+  ```bash
+  npm run build
+  npm run start
+  ```
+
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+
+Subscribe to the [GitHub releases page](https://github.com/omkeshnarwade/portfolio-starter/releases) for notifications on new versions. You enable them in your GitHub settings.
+
+</Callout>
+
+## Quick Links
+
+<Columns cols={3}>
+  <Card title="Introduction" icon="book-open" href="/introduction">
+    Learn about the portfolio features.
+  </Card>
+  <Card title="Quickstart" icon="zap" href="/quickstart">
+    Set up your site in minutes.
+  </Card>
+  <Card title="Customization" icon="settings" href="/configuration">
+    Tailor sections to your needs.
+  </Card>
+</Columns>
+
+<Expandable title="Future Roadmap" default-open="false">
+
+Upcoming in v1.3.0:
+
+- Blog integration with MDX support
+- Analytics dashboard
+- PWA features for offline access
+
+</Expandable>

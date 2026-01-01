@@ -1,0 +1,181 @@
+---
+title: Customizing the Portfolio Template
+description: Learn how to tailor the starter kit to your unique profile by editing content, styling, and adding new elements without breaking the site structure.
+---
+
+## Overview
+
+Customize your Omkesh Narwade portfolio site to reflect your unique skills, projects, and style. Start with the brand color `#3B82F6` and modify content in configuration files and components. This guide covers updating personal details, changing colors, adding projects, and integrating social links. Follow these steps to maintain site structure while personalizing it.
+
+<Columns cols={3}>
+  <Card title="Personal Info" icon="user" href="#personal-info">
+    Update name, bio, and education.
+  </Card>
+  <Card title="Color Scheme" icon="palette" href="#color-scheme">
+    Modify from `#3B82F6` base.
+  </Card>
+  <Card title="Add Projects" icon="code" href="#add-projects">
+    Include images and descriptions.
+  </Card>
+  <Card title="External Links" icon="external-link" href="#external-links">
+    Connect GitHub and LinkedIn.
+  </Card>
+</Columns>
+
+## Update Personal Information
+
+Edit the `data/profile.json` file or relevant MDX components to update your bio, education, and skills. Locate the file in your project root.
+
+<Steps>
+  <Step title="Locate Config" icon="search">
+    Open `data/profile.json`.
+  </Step>
+  <Step title="Edit Details" icon="edit">
+    Update fields like `name`, `bio`, and `education`.
+
+````json
+{
+  "name": "Omkesh Narwade",
+  "bio": "Electronics and Computer Engineering student at MIT Aurangabad with expertise in programming, web technologies, and cloud computing.",
+  "education": [
+    {
+      "degree": "B.Tech Electronics and Computer Engineering",
+      "institution": "MIT Aurangabad",
+      "year": "2025"
+    }
+  ]
+}
+````
+  </Step>
+  <Step title="Save and Preview" icon="eye">
+    Save changes and run `npm run dev` to preview.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Use markdown in `bio` for formatting, like **bold** skills or *italics* for emphasis.
+</Callout>
+
+## Customize Color Scheme
+
+The default brand color is `#3B82F6`. Override CSS custom properties in `src/styles/globals.css` or Tailwind config for consistent theming.
+
+<Tabs>
+  <Tab title="CSS Variables" icon="css3">
+    Edit root variables.
+
+````css
+:root {
+  --brand-color: #3B82F6;
+  --brand-hover: #2563EB;
+}
+
+.button {
+  background: var(--brand-color);
+}
+````
+  </Tab>
+  <Tab title="Tailwind Config" icon="tailwind">
+    Extend theme in `tailwind.config.js`.
+
+````javascript
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        brand: {
+          500: '#3B82F6',
+          600: '#2563EB'
+        }
+      }
+    }
+  }
+};
+````
+  </Tab>
+</Tabs>
+
+<Callout kind="alert">
+  Test color contrast with tools like WebAIM to ensure accessibility. Avoid low-contrast combinations.
+</Callout>
+
+## Add New Projects
+
+Expand your portfolio by adding projects to `data/projects.json`. Include images from `public/images/` and detailed descriptions.
+
+<CodeGroup tabs="JSON Update,Component Example">
+  ```json
+{
+  "projects": [
+    {
+      "title": "AI Chatbot",
+      "description": "Built a responsive chatbot using React and Node.js.",
+      "image": "/images/ai-chatbot.png",
+      "tech": ["React", "Node.js", "TensorFlow"],
+      "link": "https://github.com/omkeshnarwade/ai-chatbot"
+    }
+  ]
+}
+  ```
+  ```jsx
+<Card title="AI Chatbot" image="/images/ai-chatbot.png">
+  Responsive chatbot with ML integration.
+</Card>
+  ```
+</CodeGroup>
+
+<Steps>
+  <Step title="Add Image" icon="image">
+    Place project screenshot in `public/images/`.
+  </Step>
+  <Step title="Update JSON" icon="file">
+    Append new project object.
+  </Step>
+  <Step title="Verify Links" icon="link">
+    Ensure `link` points to live demo or repo.
+  </Step>
+</Steps>
+
+## Integrate External Links
+
+Connect your GitHub and LinkedIn profiles in the header or footer components. Edit `src/components/Header.jsx` or `data/social.json`.
+
+<Expandable title="Social Links Config" default-open="true">
+  Update links for seamless navigation.
+
+````json
+{
+  "social": [
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/omkeshnarwade",
+      "icon": "github"
+    },
+    {
+      "platform": "LinkedIn",
+      "url": "https://linkedin.com/in/omkesh-narwade",
+      "icon": "linkedin"
+    }
+  ]
+}
+````
+
+  Use `target="_blank"` for external navigation.
+</Expandable>
+
+## Best Practices
+
+- Version control changes with Git before deploying.
+- Optimize images to `<1MB` for fast loading.
+- Preview on mobile using dev tools.
+
+<Columns cols={2}>
+  <Card title="Deploy Changes" icon="rocket" href="https://vercel.com" target="_blank">
+    Push to GitHub and deploy via Vercel.
+  </Card>
+  <Card title="Troubleshoot" icon="bug">
+    Check console for errors. Clear cache with `npm run build`.
+  </Card>
+</Columns>
+
+Your customized portfolio now showcases Omkesh Narwade's unique profile while preserving the template's responsive design.
